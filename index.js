@@ -1,6 +1,8 @@
 const express = require('express')
 const Pusher = require('pusher');
+const cors = require('./cors');
 const app = express()
+app.use(cors());
 const PORT = process.env.PORT || 5000
 
 var pusher = new Pusher({
@@ -20,4 +22,4 @@ app.get('/', (req, res) => {
     res.send('success');
 })
 
-app.listen(PORT,() => console.log(`Example app listening on port ${PORT}!`))
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
