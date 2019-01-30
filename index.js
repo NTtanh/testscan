@@ -1,7 +1,7 @@
 const express = require('express')
 const Pusher = require('pusher');
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 5000
 
 var pusher = new Pusher({
     appId: '702258',
@@ -20,4 +20,4 @@ app.get('/', (req, res) => {
     res.send('success');
 })
 
-app.listen(port,'0.0.0.0', () => console.log(`Example app listening on port ${port}!`))
+app.listen(PORT,() => console.log(`Example app listening on port ${PORT}!`))
